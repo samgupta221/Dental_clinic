@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smile Care Dental | Best Dental Clinic in India</title>
+    <meta name="description" content="Premium dental care across India. Expert dentists, advanced technology, painless treatments. Book your appointment today.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9',
+                        secondary: '#06b6d4',
+                        accent: '#f59e0b',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+        }
+        .service-icon {
+            background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+        }
+        .pulse-ring {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .testimonial-card {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+        }
+        .price-tag {
+            background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+        }
+        .cta-glow {
+            box-shadow: 0 0 30px rgba(14, 165, 233, 0.4);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal-content {
+            animation: modalSlide 0.3s ease;
+        }
+        @keyframes modalSlide {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .city-tag {
+            transition: all 0.2s ease;
+        }
+        .city-tag:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+            color: white;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-white overflow-x-hidden">
+
+    <!-- Top Bar -->
+    <div class="bg-dark text-white py-2 px-4 text-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-2"><i class="fas fa-phone-alt text-primary text-xs"></i> 1800-123-4567</span>
+                <span class="hidden md:flex items-center gap-2"><i class="fas fa-envelope text-primary text-xs"></i> care@smilecare.in</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-primary text-xs"></i> 25+ Cities Across India</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 nav-blur border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-full service-icon flex items-center justify-center">
+                        <i class="fas fa-tooth text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-dark tracking-tight">Smile Care</h1>
+                        <p class="text-xs text-gray-500 -mt-1">Dental Clinic</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#services" class="text-gray-600 hover:text-primary font-medium transition">Services</a>
+                    <a href="#why-us" class="text-gray-600 hover:text-primary font-medium transition">Why Us</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-primary font-medium transition">Pricing</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-primary font-medium transition">Reviews</a>
+                    <a href="#locations" class="text-gray-600 hover:text-primary font-medium transition">Locations</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="openModal()" class="hidden md:block bg-primary hover:bg-secondary text-white px-6 py-2.5 rounded-full font-semibold transition cta-glow">
+                        Book Appointment
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="md:hidden text-gray-700 text-xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-4 py-3 space-y-2">
+                <a href="#services" class="block py-2 text-gray-600">Services</a>
+                <a href="#why-us" class="block py-2 text-gray-600">Why Us</a>
+                <a href="#pricing" class="block py-2 text-gray-600">Pricing</a>
+                <a href="#testimonials" class="block py-2 text-gray-600">Reviews</a>
+                <a href="#locations" class="block py-2 text-gray-600">Locations</a>
+                <button onclick="openModal()" class="w-full bg-primary text-white py-3 rounded-full font-semibold mt-2">Book Appointment</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="scroll-reveal">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm mb-6 border border-white/20">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        Now Open in 25+ Cities Across India
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                        Your Perfect <span class="gradient-text">Smile</span><br>Starts Here
+                    </h1>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed max-w-lg">
+                        Experience world-class dental care with India's most trusted network of clinics. Advanced technology, expert dentists, and painless treatments — all at affordable prices.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="openModal()" class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-full font-bold text-lg transition cta-glow flex items-center justify-center gap-2">
+                            <i class="fas fa-calendar-check"></i> Book Free Consultation
+                        </button>
+                        <button onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-4 rounded-full font-semibold transition flex items-center justify-center gap-2">
+                            <i class="fas fa-tag"></i> View Pricing
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-6 mt-10 text-gray-400 text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span>50,000+ Happy Patients</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span>4.9/5 Rating</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative hidden lg:block scroll-reveal">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-2xl"></div>
+                        <div class="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white rounded-2xl p-5 shadow-lg floating" style="animation-delay: 0s;">
+                                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-3">
+                                        <i class="fas fa-tooth text-primary text-xl"></i>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800">Teeth Cleaning</h3>
+                                    <p class="text-sm text-gray-500 mt-1">From ₹499</p>
+                                </div>
+                                <div class="bg-white rounded-2xl p-5 shadow-lg floating" style="animation-delay: 0.5s;">
+                                    <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mb-3">
+                                        <i class="fas fa-smile text-purple-500 text-xl"></i>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800">Whitening</h3>
+                                    <p class="text-sm text-gray-500 mt-1">From ₹2,999</p>
+                                </div>
+                                <div class="bg-white rounded-2xl p-5 shadow-lg floating" style="animation-delay: 1s;">
+                                    <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-3">
+                                        <i class="fas fa-teeth text-green-500 text-xl"></i>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800">Braces</h3>
+                                    <p class="text-sm text-gray-500 mt-1">From ₹25,000</p>
+                                </div>
+                                <div class="bg-white rounded-2xl p-5 shadow-lg floating" style="animation-delay: 1.5s;">
+                                    <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mb-3">
+                                        <i class="fas fa-teeth-open text-orange-500 text-xl"></i>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800">Implants</h3>
+                                    <p class="text-sm text-gray-500 mt-1">From ₹15,000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="scroll-reveal">
+                    <div class="text-3xl md:text-4xl font-bold gradient-text counter" data-target="50">0</div>
+                    <div class="text-gray-500 mt-1 text-sm">Clinics Across India</div>
+                </div>
+                <div class="scroll-reveal">
+                    <div class="text-3xl md:text-4xl font-bold gradient-text counter" data-target="50000">0</div>
+                    <div class="text-gray-500 mt-1 text-sm">Happy Patients</div>
+                </div>
+                <div class="scroll-reveal">
+                    <div class="text-3xl md:text-4xl font-bold gradient-text counter" data-target="100">0</div>
+                    <div class="text-gray-500 mt-1 text-sm">Expert Dentists</div>
+                </div>
+                <div class="scroll-reveal">
+                    <div class="text-3xl md:text-4xl font-bold gradient-text counter" data-target="15">0</div>
+                    <div class="text-gray-500 mt-1 text-sm">Years of Excellence</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-primary font-semibold text-sm uppercase tracking-wider">Our Services</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2">Complete Dental Care Solutions</h2>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">From routine checkups to advanced cosmetic procedures, we offer comprehensive dental services using the latest technology.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 card-hover scroll-reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-tooth text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">General Dentistry</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Regular checkups, fillings, root canals, and extractions. Preventive care to keep your smile healthy.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-primary font-bold">From ₹499</span>
+                        <button onclick="openModal()" class="text-sm text-gray-400 hover:text-primary transition">Book Now <i class="fas fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 card-hover scroll-reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-smile text-purple-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Teeth Whitening</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Professional whitening treatments that remove stains and brighten your smile by up to 8 shades.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-primary font-bold">From ₹2,999</span>
+                        <button onclick="openModal()" class="text-sm text-gray-400 hover:text-primary transition">Book Now <i class="fas fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 card-hover scroll-reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-green-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-teeth text-green-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Braces & Aligners</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Metal braces, ceramic braces, and invisible aligners. Straighten your teeth with modern orthodontic solutions.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-primary font-bold">From ₹25,000</span>
+                        <button onclick="openModal()" class="text-sm text-gray-400 hover:text-primary transition">Book Now <i class="fas fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 card-hover scroll-reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-teeth-open text-orange-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Dental Implants</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Permanent tooth replacement solutions that look and feel natural. Single tooth to full mouth restoration.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-primary font-bold">From ₹15,000</span>
+                        <button onclick="openModal()" class="text-sm text-gray-400 hover:text-primary transition">Book Now <i class="fas fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 card-hover scroll-reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-pink-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-crown text-pink-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Crowns & Bridges</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Custom-made ceramic and zirconia crowns. Restore damaged teeth and fill gaps with natural-looking solutions.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-primary font-bold">From ₹3,500</span>
+                        <button onclick="openModal()" class="text-sm text-gray-400 hover:text-primary transition">Book Now <i class="fas fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 card-hover scroll-reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-teal-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-child text-teal-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Pediatric Dentistry</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Child-friendly dental care in a fun, comfortable environment. Specialized treatments for kids of all ages.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-primary font-bold">From ₹399</span>
+                        <button onclick="openModal()" class="text-sm text-gray-400 hover:text-primary transition">Book Now <i class="fas fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="scroll-reveal">
+                    <span class="text-primary font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2 mb-6">India's Most Trusted Dental Network</h2>
+                    <p class="text-gray-500 mb-8 leading-relaxed">We combine cutting-edge technology with compassionate care to deliver the best dental experience in India. Our commitment to quality and patient comfort sets us apart.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-user-md text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark">Expert Dentists</h4>
+                                <p class="text-gray-500 text-sm mt-1">MCI certified dentists with 10+ years of experience</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-microscope text-green-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark">Advanced Technology</h4>
+                                <p class="text-gray-500 text-sm mt-1">Digital X-rays, 3D scanning, and laser treatments</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-alt text-purple-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark">Sterilization Standards</h4>
+                                <p class="text-gray-500 text-sm mt-1">Hospital-grade sterilization and single-use instruments</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-rupee-sign text-orange-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark">Transparent Pricing</h4>
+                                <p class="text-gray-500 text-sm mt-1">No hidden costs. EMI options available on all treatments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative scroll-reveal">
+                    <div class="absolute -inset-4 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl blur-xl"></div>
+                    <div class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
+                        <div class="bg-gradient-to-r from-primary to-secondary p-6 text-white">
+                            <h3 class="text-xl font-bold">Book Your Appointment</h3>
+                            <p class="text-white/80 text-sm mt-1">Free consultation for first visit</p>
+                        </div>
+                        <form onsubmit="handleFormSubmit(event)" class="p-6 space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700 block mb-1">Name</label>
+                                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition" placeholder="Your name">
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700 block mb-1">Phone</label>
+                                    <input type="tel" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition" placeholder="+91 98765 43210">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-gray-700 block mb-1">Select City</label>
+                                <select class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
+                                    <option>Delhi</option>
+                                    <option>Mumbai</option>
+                                    <option>Bangalore</option>
+                                    <option>Hyderabad</option>
+                                    <option>Chennai</option>
+                                    <option>Pune</option>
+                                    <option>Kolkata</option>
+                                    <option>Ahmedabad</option>
+                                    <option>Jaipur</option>
+                                    <option>Lucknow</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-gray-700 block mb-1">Select Service</label>
+                                <select class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
+                                    <option>General Checkup</option>
+                                    <option>Teeth Cleaning</option>
+                                    <option>Teeth Whitening</option>
+                                    <option>Braces/Aligners</option>
+                                    <option>Dental Implants</option>
+                                    <option>Root Canal</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-gray-700 block mb-1">Preferred Date</label>
+                                <input type="date" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
+                            </div>
+                            <button type="submit" class="w-full bg-primary hover:bg-secondary text-white py-3.5 rounded-xl font-bold text-lg transition cta-glow">
+                                Book Appointment
+                            </button>
+                            <p class="text-xs text-gray-400 text-center">By booking, you agree to our terms. We'll confirm via SMS/WhatsApp.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-primary font-semibold text-sm uppercase tracking-wider">Pricing</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2">Affordable Dental Care</h2>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Quality treatment at prices that won't break the bank. EMI options available starting at ₹999/month.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- Basic Plan -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 card-hover scroll-reveal">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-dark">Basic Care</h3>
+                        <p class="text-gray-500 text-sm mt-1">Essential dental services</p>
+                    </div>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold text-dark">₹499</span>
+                        <span class="text-gray-400">/visit</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500"></i> Dental Checkup
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500"></i> Teeth Cleaning
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500"></i> X-Ray (if needed)
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500"></i> Oral Health Report
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i class="fas fa-times text-gray-300"></i> Filling Treatment
+                        </li>
+                    </ul>
+                    <button onclick="openModal()" class="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-xl font-semibold transition">Get Started</button>
+                </div>
+                <!-- Popular Plan -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-primary relative card-hover scroll-reveal">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                        <span class="price-tag text-white px-4 py-1 rounded-full text-sm font-bold">Most Popular</span>
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-dark">Complete Care</h3>
+                        <p class="text-gray-500 text-sm mt-1">Comprehensive treatment</p>
+                    </div>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold text-primary">₹1,999</span>
+                        <span class="text-gray-400">/visit</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500"></i> Everything in Basic
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500"></i> Filling Treatment
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500"></i> Teeth Whitening
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500"></i> 6-Month Follow-up
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500"></i> Priority Booking
+                        </li>
+                    </ul>
+                    <button onclick="openModal()" class="w-full bg-primary hover:bg-secondary text-white py-3 rounded-xl font-semibold transition cta-glow">Get Started</button>
+                </div>
+                <!-- Premium Plan -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 card-hover scroll-reveal">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-dark">Premium Care</h3>
+                        <p class="text-gray-500 text-sm mt-1">All-inclusive package</p>
+                    </div>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold text-dark">₹4,999</span>
+                        <span class="text-gray-400">/visit</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500"></i> Everything in Complete
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500"></i> Root Canal Treatment
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500"></i> Crown/Cap Placement
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500"></i> 1-Year Warranty
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500"></i> 24/7 Support
+                        </li>
+                    </ul>
+                    <button onclick="openModal()" class="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-xl font-semibold transition">Get Started</button>
+                </div>
+            </div>
+            <p class="text-center text-gray-400 text-sm mt-8">All prices inclusive of taxes. EMI available on treatments above ₹5,000.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-primary font-semibold text-sm uppercase tracking-wider">Testimonials</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2">What Our Patients Say</h2>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Over 50,000 happy smiles across India. Here's what some of our patients have to say.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="testimonial-card rounded-2xl p-8 border border-gray-100 shadow-sm scroll-reveal">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">"I was terrified of dentists, but the team at Smile Care made me so comfortable. The painless root canal was truly painless! Highly recommend their Delhi clinic."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">RK</div>
+                        <div>
+                            <h4 class="font-bold text-dark text-sm">Rahul Kumar</h4>
+                            <p class="text-gray-400 text-xs">Delhi • Root Canal Treatment</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card rounded-2xl p-8 border border-gray-100 shadow-sm scroll-reveal">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">"Got my invisible aligners from Smile Care Bangalore. The results are amazing! My teeth are perfectly straight now. The staff is very professional and friendly."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold">SP</div>
+                        <div>
+                            <h4 class="font-bold text-dark text-sm">Priya Sharma</h4>
+                            <p class="text-gray-400 text-xs">Bangalore • Invisible Aligners</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card rounded-2xl p-8 border border-gray-100 shadow-sm scroll-reveal">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star-half-alt text-accent"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">"Best dental clinic in Mumbai! I got my dental implants done here. The price was very reasonable compared to other clinics, and the quality is top-notch."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center text-white font-bold">AP</div>
+                        <div>
+                            <h4 class="font-bold text-dark text-sm">Amit Patel</h4>
+                            <p class="text-gray-400 text-xs">Mumbai • Dental Implants</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-primary font-semibold text-sm uppercase tracking-wider">Our Presence</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2">25+ Cities Across India</h2>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Find a Smile Care clinic near you. We're expanding rapidly to bring quality dental care to every corner of India.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3 mb-12 scroll-reveal">
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">Delhi</span>
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">Mumbai</span>
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">Bangalore</span>
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">Hyderabad</span>
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">Chennai</span>
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">Pune</span>
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">Kolkata</span>
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">Ahmedabad</span>
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">Jaipur</span>
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">Lucknow</span>
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">Chandigarh</span>
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">Indore</span>
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">Bhopal</span>
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">Nagpur</span>
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">Patna</span>
+                <span class="city-tag bg-white px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 border border-gray-200 cursor-pointer">+10 More</span>
+            </div>
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center scroll-reveal">
+                <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-map-marked-alt text-primary text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-dark mb-2">Find Your Nearest Clinic</h3>
+                <p class="text-gray-500 mb-6 max-w-md mx-auto">Enter your city or pincode to find the closest Smile Care clinic and check available appointment slots.</p>
+                <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                    <input type="text" placeholder="Enter city or pincode" class="flex-1 px-5 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
+                    <button onclick="openModal()" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl font-semibold transition">Find Clinic</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-dark relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10 scroll-reveal">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Ready for Your Perfect Smile?</h2>
+            <p class="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">Book a free consultation today and get a personalized treatment plan. First 100 bookings this month get 20% off on all treatments!</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="openModal()" class="bg-primary hover:bg-secondary text-white px-10 py-4 rounded-full font-bold text-lg transition cta-glow flex items-center justify-center gap-2">
+                    <i class="fas fa-calendar-check"></i> Book Free Consultation
+                </button>
+                <a href="tel:18001234567" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-10 py-4 rounded-full font-semibold transition flex items-center justify-center gap-2">
+                    <i class="fas fa-phone-alt"></i> Call 1800-123-4567
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm mt-6">Free consultation valid for new patients only. No hidden charges.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-gray-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 rounded-full service-icon flex items-center justify-center">
+                            <i class="fas fa-tooth text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-white tracking-tight">Smile Care</h1>
+                            <p class="text-xs text-gray-500 -mt-1">Dental Clinic</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">India's most trusted dental care network. Providing quality, affordable dental treatments across 25+ cities.</p>
+                    <div class="flex gap-3 mt-4">
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-primary text-sm transition">Services</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-primary text-sm transition">Pricing</a></li>
+                        <li><a href="#locations" class="text-gray-400 hover:text-primary text-sm transition">Locations</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-primary text-sm transition">Reviews</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary text-sm transition">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-primary text-sm transition">General Dentistry</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary text-sm transition">Teeth Whitening</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary text-sm transition">Braces & Aligners</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary text-sm transition">Dental Implants</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary text-sm transition">Root Canal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-400 text-sm">
+                            <i class="fas fa-phone-alt text-primary"></i>
+                            1800-123-4567
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400 text-sm">
+                            <i class="fas fa-envelope text-primary"></i>
+                            care@smilecare.in
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-400 text-sm">
+                            <i class="fas fa-map-marker-alt text-primary mt-0.5"></i>
+                            <span>Head Office: 123 Dental Tower,<br>Connaught Place, New Delhi - 110001</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm"> 2026 Smile Care Dental. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content bg-white rounded-2xl p-8 max-w-md w-full mx-4 relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-calendar-check text-primary text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-dark">Book Appointment</h3>
+                <p class="text-gray-500 text-sm mt-1">Free consultation for new patients</p>
+            </div>
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <input type="text" required placeholder="Full Name" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
+                <input type="tel" required placeholder="Phone Number" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
+                <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
+                    <option value="">Select City</option>
+                    <option>Delhi</option>
+                    <option>Mumbai</option>
+                    <option>Bangalore</option>
+                    <option>Hyderabad</option>
+                    <option>Chennai</option>
+                    <option>Pune</option>
+                    <option>Kolkata</option>
+                    <option>Other</option>
+                </select>
+                <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
+                    <option value="">Select Service</option>
+                    <option>General Checkup</option>
+                    <option>Teeth Cleaning</option>
+                    <option>Teeth Whitening</option>
+                    <option>Braces/Aligners</option>
+                    <option>Dental Implants</option>
+                    <option>Root Canal</option>
+                    <option>Other</option>
+                </select>
+                <button type="submit" class="w-full bg-primary hover:bg-secondary text-white py-3.5 rounded-xl font-bold text-lg transition cta-glow">
+                    Confirm Booking
+                </button>
+            </form>
+            <p class="text-xs text-gray-400 text-center mt-4">We'll confirm your appointment via SMS/WhatsApp within 30 minutes.</p>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="successToast" class="fixed bottom-8 right-8 bg-green-500 text-white px-6 py-4 rounded-xl shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-3">
+        <i class="fas fa-check-circle text-xl"></i>
+        <div>
+            <h4 class="font-bold">Booking Confirmed!</h4>
+            <p class="text-sm text-white/90">We'll contact you shortly.</p>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Modal functions
+        function openModal() {
+            document.getElementById('bookingModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('bookingModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on outside click
+        document.getElementById('bookingModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Form handlers
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast();
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            closeModal();
+            showToast();
+        }
+
+        function showToast() {
+            const toast = document.getElementById('successToast');
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 4000);
+        }
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        // Counter animation
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            counter.textContent = target.toLocaleString() + '+';
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = Math.floor(current).toLocaleString() + '+';
+                        }
+                    }, 16);
+
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Close mobile menu if open
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
