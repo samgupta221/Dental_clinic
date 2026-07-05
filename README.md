@@ -1,75 +1,105 @@
 # 🦷 Smile Care Dental Clinic Website
 
-A modern, responsive, and premium dental clinic landing page built using **HTML**, **Tailwind CSS**, and **JavaScript**. The website is designed to provide an elegant user experience with smooth animations, responsive layouts, pricing sections, testimonials, appointment booking modal, and conversion-focused UI.
+A modern, responsive, and conversion-focused dental clinic website built with **HTML5**, **Tailwind CSS**, and **JavaScript**. The website is designed to deliver a premium user experience with elegant UI, smooth animations, responsive layouts, and online appointment booking.
 
 ---
 
-# ✨ Features
+## 🌐 Live Demo
 
-* 🎨 Premium and modern UI design
-* 📱 Fully responsive on desktop, tablet, and mobile
-* 🦷 Professional dental clinic landing page
-* 📅 Appointment booking modal
-* 💰 Pricing section
-* ⭐ Patient testimonials
-* 📍 Clinic locations
-* 📊 Animated statistics counters
-* ✨ Scroll reveal animations
-* 📌 Sticky navigation bar
-* 📞 Call-to-action sections
-* 🔥 Smooth scrolling navigation
-* 💬 Success toast notification
-* ⚡ Lightweight and fast loading
+🔗 **Website:** https://heroic-pegasus-d42acc.netlify.app/
 
 ---
 
-# 🛠️ Built With
+## ✨ Features
 
-* HTML5
-* Tailwind CSS
-* JavaScript (ES6)
-* Font Awesome Icons
-* Google Fonts
+- 🦷 Premium Dental Clinic Landing Page
+- 📱 Fully Responsive Design
+- ⚡ Smooth Scroll Animations
+- 🎨 Modern UI/UX
+- 📅 Appointment Booking Modal
+- 💰 Pricing Section
+- ⭐ Patient Testimonials
+- 📍 Multi-City Clinic Locations
+- 📊 Animated Statistics Counter
+- 📞 Contact & Call-to-Action Sections
+- 📱 Mobile Navigation Menu
+- 🎯 Conversion-Focused Design
 
 ---
 
-# 📂 Project Structure
+## 🛠️ Tech Stack
 
-```
-SmileCare-Dental-Website/
+- HTML5
+- Tailwind CSS
+- JavaScript (ES6)
+- Font Awesome
+- Google Fonts
 
+---
+
+## 📂 Project Structure
+
+```text
+Smile-Care-Dental-Website/
 │── index.html
 │── README.md
+│── screenshots/
+│   ├── homepage.png
+│   ├── services.png
+│   ├── pricing.png
+│   └── booking.png
 ```
 
-# 🎯 Website Sections
+---
 
-* Hero Section
-* Navigation Bar
-* Services
-* Why Choose Us
-* Appointment Form
-* Pricing Plans
-* Testimonials
-* Locations
-* Call To Action
-* Footer
-* Booking Modal
+## 📌 Website Sections
+
+- Hero Section
+- Services
+- Why Choose Us
+- Appointment Booking
+- Pricing Plans
+- Patient Testimonials
+- Clinic Locations
+- Contact Information
+- Footer
 
 ---
 
-# 🎨 UI Highlights
+## 🎨 UI Highlights
 
-* Modern Gradient Design
-* Premium Typography
-* Glassmorphism Effects
-* Animated Cards
-* Hover Effects
-* Floating Elements
-* Smooth Scrolling
-* Interactive Booking Modal
-* Animated Counters
+- Glassmorphism Navigation
+- Gradient Hero Section
+- Floating Cards
+- Scroll Reveal Animations
+- Animated Counters
+- Responsive Pricing Cards
+- Interactive Booking Modal
+- Toast Notifications
 
 ---
 
-**Made with ❤️ by Samridhi Gupta**
+## 📱 Responsive Design
+
+Optimized for:
+
+- 💻 Desktop
+- 💼 Laptop
+- 📱 Mobile
+- 📟 Tablet
+
+---
+
+## 🚀 Performance
+
+- Lightweight HTML
+- Fast Loading
+- Responsive Layout
+- Optimized Assets
+- SEO-Friendly Structure
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
